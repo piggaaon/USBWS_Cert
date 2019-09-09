@@ -1,4 +1,4 @@
-# USBWS_Cert README
+## USBWS_Cert README
 I wrote this script(s) as a developer so that I can my own self signed
 certificates. USBWS_Cert will be include in updated USBWS.
 
@@ -11,12 +11,12 @@ Information used to create Certificates:
 - Example 1: Creating SSL Files from the Command Line on Unix (https://dev.mysql.com/doc/refman/8.0/en/creating-ssl-files-using-openssl.html)
 
 ------------
-## Install Instructions:
+### Install Instructions:
 
 Download and extract zip; to root of USBWS.
 
 ------------
-## Setup Instructions:
+### Setup Instructions:
 1. Stop Webserver and DB Sever (httpd and mydqld)
 
 2. Run CertPublicGet.bat (Downloads cacert.pem)
@@ -27,11 +27,12 @@ Download and extract zip; to root of USBWS.
    See Examples below are configured for use with USBWS.
 
 ------------
-Example Setting in confgiuration files for HTTPd,MariaDB,PHP,PHPMyAdmin for USBWS:
+### Example Setting in confgiuration files for:
+### HTTPd, MariaDB, PHP, PHPMyAdmin used in USBWS:
 
 ------------
 
-## httpd.conf:
+### httpd.conf:
   NOTE: Uncomment "LoadModule ssl_module modules/mod_ssl.so" in modules section.
   LoadModule ssl_module modules/mod_ssl.so
   SSLCertificateFile "{path}/USBWS_Cert/server-cert.pem"
@@ -40,7 +41,7 @@ Example Setting in confgiuration files for HTTPd,MariaDB,PHP,PHPMyAdmin for USBW
   #SSLCACertificatePath "{path}/USBWS_Cert"
   SSLCACertificateFile "{path}/USBWS_Cert/ca.pem"
 
-## my.ini:
+### my.ini:
   [mysqld]
   ssl = On
   ssl-ca = {path}/USBWS_Cert/ca.pem
@@ -51,14 +52,14 @@ Example Setting in confgiuration files for HTTPd,MariaDB,PHP,PHPMyAdmin for USBW
   ssl-key = {path}/USBWS_Cert/client-key.pem
   ssl-cert = {path}/USBWS_Cert/client-cert.pem
 
-## php.ini:
+### php.ini:
   [curl]
   curl.cainfo = "{path}\USBWS_Cert\cacert.pem"
   [openssl]
   openssl.cafile = "{path}\USBWS_Cert\cacert.pem"
   openssl.capath = "{path}\USBWS_Cert\"
 
-## config.inc.php:
+### config.inc.php:
   $cfg['Servers'][$i]['ssl'] = true;  // USBWS Setting
   $cfg['Servers'][$i]['ssl_key'] = $_SERVER["DOCUMENT_ROOT"]."../USBWS_Cert/client-key.pem";  // USBWS Setting
   $cfg['Servers'][$i]['ssl_cert'] = $_SERVER["DOCUMENT_ROOT"]."../USBWS_Cert/client-cert.pem";  // USBWS Setting
