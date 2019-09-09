@@ -9,7 +9,6 @@ Third party software used:
 
 Information used to create Certificates:
 - Example 1: Creating SSL Files from the Command Line on Unix (https://dev.mysql.com/doc/refman/8.0/en/creating-ssl-files-using-openssl.html)
-- 
 
 ------------
 ## Install Instructions:
