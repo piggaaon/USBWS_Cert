@@ -27,7 +27,7 @@ Download and extract zip; to root of USBWS.
    See Examples below are configured for use with USBWS.
 
 ------------
-Exmaple Setting in confgiuration files for HTTPd,MariaDB,PHP,PHPMyAdmin for USBWS:
+Example Setting in confgiuration files for HTTPd,MariaDB,PHP,PHPMyAdmin for USBWS:
 
 ------------
 
