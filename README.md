@@ -8,7 +8,7 @@ Third party software used:
 - cacert.pem    : https://curl.haxx.se/docs/caextract.html
 
 Information used to create Certificates:
-- Example 1: Creating SSL Files from the Command Line on Unix (https://dev.mysql.com/doc/refman/8.0/en/creating-ssl-files-using-openssl.html)
+- [Example 1: Creating SSL Files from the Command Line on Unix](https://dev.mysql.com/doc/refman/8.0/en/creating-ssl-files-using-openssl.html)
 
 ------------
 ### Install Instructions:
@@ -27,13 +27,12 @@ Download and extract zip; to root of USBWS.
    See Examples below are configured for use with USBWS.
 
 ------------
-### Example Setting in confgiuration files for:
-### HTTPd, MariaDB, PHP, PHPMyAdmin used in USBWS:
+### Example Setting in confgiuration files for: HTTPd, MariaDB, PHP, PHPMyAdmin used in USBWS:
 
 ------------
 
 ### httpd.conf:
-  NOTE: Uncomment "LoadModule ssl_module modules/mod_ssl.so" in modules section.
+  **NOTE: Uncomment "LoadModule ssl_module modules/mod_ssl.so" in modules section.**
   LoadModule ssl_module modules/mod_ssl.so
   SSLCertificateFile "{path}/USBWS_Cert/server-cert.pem"
   SSLCertificateKeyFile "{path}/USBWS_Cert/server-key.pem"
