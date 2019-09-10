@@ -27,10 +27,7 @@ Download and extract zip; to root of USBWS.
    See Examples below are configured for use with USBWS.
 
 ------------
-### Example Setting in confgiuration files for: HTTPd, MariaDB, PHP, PHPMyAdmin used in USBWS:
-
-------------
-
+#### Example Setting in confgiuration files for: HTTPd, MariaDB, PHP, PHPMyAdmin used in USBWS:
 ### httpd.conf:
   ```
   **NOTE: Uncomment "LoadModule ssl_module modules/mod_ssl.so" in modules section.**
