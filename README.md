@@ -2,7 +2,7 @@
 I wrote this script(s) as a developer so that I can my own self signed
 certificates. USBWS_Cert will be include in updated USBWS.
 
-Third party software used:
+Third Party Software Used:
 - CoreUtils     : https://packages.msys2.org/base/coreutils
 - wget.exe      : https://eternallybored.org/misc/wget/
 - cacert.pem    : https://curl.haxx.se/docs/caextract.html
@@ -32,6 +32,7 @@ Download and extract zip; to root of USBWS.
 ------------
 
 ### httpd.conf:
+  ```
   **NOTE: Uncomment "LoadModule ssl_module modules/mod_ssl.so" in modules section.**
   LoadModule ssl_module modules/mod_ssl.so
   SSLCertificateFile "{path}/USBWS_Cert/server-cert.pem"
@@ -39,8 +40,10 @@ Download and extract zip; to root of USBWS.
   #SSLCertificateChainFile "{path}/USBWS_Cert/server-cert.pem"
   #SSLCACertificatePath "{path}/USBWS_Cert"
   SSLCACertificateFile "{path}/USBWS_Cert/ca.pem"
+  ```
 
 ### my.ini:
+  ```
   [mysqld]
   ssl = On
   ssl-ca = {path}/USBWS_Cert/ca.pem
@@ -50,21 +53,26 @@ Download and extract zip; to root of USBWS.
   ssl-ca = {path}/USBWS_Cert/ca.pem
   ssl-key = {path}/USBWS_Cert/client-key.pem
   ssl-cert = {path}/USBWS_Cert/client-cert.pem
+  ```
 
 ### php.ini:
+  ```
   [curl]
   curl.cainfo = "{path}\USBWS_Cert\cacert.pem"
   [openssl]
   openssl.cafile = "{path}\USBWS_Cert\cacert.pem"
   openssl.capath = "{path}\USBWS_Cert\"
+  ```
 
 ### config.inc.php:
+  ```
   $cfg['Servers'][$i]['ssl'] = true;  // USBWS Setting
   $cfg['Servers'][$i]['ssl_key'] = $_SERVER["DOCUMENT_ROOT"]."../USBWS_Cert/client-key.pem";  // USBWS Setting
   $cfg['Servers'][$i]['ssl_cert'] = $_SERVER["DOCUMENT_ROOT"]."../USBWS_Cert/client-cert.pem";  // USBWS Setting
   $cfg['Servers'][$i]['ssl_ca'] = $_SERVER["DOCUMENT_ROOT"]."../USBWS_Cert/ca.pem";  // USBWS Setting
   $cfg['Servers'][$i]['ssl_ca_path'] = $_SERVER["DOCUMENT_ROOT"]."../USBWS_Cert/";  // USBWS Setting
   $cfg['Servers'][$i]['ssl_ciphers'] = 'TLSv1.2'; // USBWS Setting
+  ```
 
 ------------
 
