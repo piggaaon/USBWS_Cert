@@ -41,7 +41,6 @@ Download and extract zip; to root of USBWS.
   #SSLCACertificatePath "{path}/USBWS_Cert"
   SSLCACertificateFile "{path}/USBWS_Cert/ca.pem"
   ```
-
 ### my.ini:
   ```
   [mysqld]
@@ -54,7 +53,6 @@ Download and extract zip; to root of USBWS.
   ssl-key = {path}/USBWS_Cert/client-key.pem
   ssl-cert = {path}/USBWS_Cert/client-cert.pem
   ```
-
 ### php.ini:
   ```
   [curl]
@@ -63,7 +61,6 @@ Download and extract zip; to root of USBWS.
   openssl.cafile = "{path}\USBWS_Cert\cacert.pem"
   openssl.capath = "{path}\USBWS_Cert\"
   ```
-
 ### config.inc.php:
   ```
   $cfg['Servers'][$i]['ssl'] = true;  // USBWS Setting
@@ -73,7 +70,6 @@ Download and extract zip; to root of USBWS.
   $cfg['Servers'][$i]['ssl_ca_path'] = $_SERVER["DOCUMENT_ROOT"]."../USBWS_Cert/";  // USBWS Setting
   $cfg['Servers'][$i]['ssl_ciphers'] = 'TLSv1.2'; // USBWS Setting
   ```
-
 ------------
 
 **The Code for USBWS_Cert has been released under the MIT License:**
